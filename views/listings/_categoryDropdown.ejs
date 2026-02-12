@@ -1,0 +1,14 @@
+<div class="mb-3">
+  <label for="category" class="form-label">Category</label>
+  <select name="listing[category]" class="form-control" required>
+    <option value="">Select a category</option>
+
+    <% categories.forEach(cat => { %>
+      <option value="<%= cat.value %>"
+        <%= listing && listing.category === cat.value ? "selected" : "" %>>
+        <%= cat.label %>
+      </option>
+    <% }) %>
+
+  </select>
+</div>
